@@ -73,7 +73,7 @@ unique_rpiboot_copy_files_destinations_dirs := $(filter-out .,$(patsubst %/,%,$(
 define build-rpibootimage-target
 	mkdir -p $(dir $(1))
 	dd if=/dev/zero of=$(1) bs=$$((1024*1024)) count=$(2)
-	mkfs.fat -n "rpiboot" $(1)
+	mkfs.fat -n "rpiboot" -R 1 -s 1 $(1)
 	for item in $(ALL_INSTALLED_RPIBOOT_FILES); do \
 		if [ "`dirname $${item}`" = "$(RPIBOOT_OUT_ROOT)" ] ; then \
 			$(FAT16COPY) $(1) $${item} ; \
@@ -87,7 +87,7 @@ endef
 
 $(RPIBOOT_IMAGE): $(ALL_INSTALLED_RPIBOOT_FILES) | $(FAT16COPY)
 	echo "Target rpiboot fs image: $(BUILT_RPIBOOTIMAGE)"
-	$(call build-rpibootimage-target,$(BUILT_RPIBOOTIMAGE),64)
+	$(call build-rpibootimage-target,$(BUILT_RPIBOOTIMAGE),32)
 	echo "Install rpiboot fs image: $@"
 	$(ACP) $(BUILT_RPIBOOTIMAGE) $@
 
