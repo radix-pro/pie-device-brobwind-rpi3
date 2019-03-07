@@ -45,5 +45,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.isa.arm.variant=cortex-a53 \
     debug.hwui.use_partial_updates=0 \
     ro.frp.pst=/dev/block/platform/soc/3f202000.mmc/by-name/frp \
-    ro.sf.lcd_density=240 \
+    ro.sf.lcd_density=160 \
     ro.opengles.version=131072 \
