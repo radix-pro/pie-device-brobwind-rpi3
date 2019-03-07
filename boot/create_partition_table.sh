@@ -59,10 +59,10 @@ fi
 target=${1}
 
 # -----------------------------------------------------------------------------------
-SIZE_RPIBOOT=64M
+SIZE_RPIBOOT=32M
 SIZE_UBOOT=1024K
 SIZE_BOOT=32M
-SIZE_SYSTEM=650M
+SIZE_SYSTEM=1100M
 SIZE_VBMETA=64K
 SIZE_MISC=1024K
 SIZE_VENDOR=256M
