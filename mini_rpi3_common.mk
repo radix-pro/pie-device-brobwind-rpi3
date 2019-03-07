@@ -175,6 +175,7 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_tv.xml \
 
 PRODUCT_COPY_FILES += \
     device/brobwind/rpi3/init.rpi3-net.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.rpi3-net.sh
