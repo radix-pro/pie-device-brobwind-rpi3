@@ -29,7 +29,7 @@
         <com.android.systemui.statusbar.phone.ReverseLinearLayout
             android:id="@+id/ends_group"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingTop="@dimen/nav_content_padding"
             android:paddingBottom="@dimen/nav_content_padding"
@@ -39,7 +39,7 @@
         <com.android.systemui.statusbar.phone.ReverseLinearLayout
             android:id="@+id/center_group"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical"
             android:paddingTop="@dimen/nav_content_padding"
