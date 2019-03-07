@@ -31,7 +31,7 @@ $ repo init -u git://mirrors.ustc.edu.cn/aosp/platform/manifest -b android-9.0.0
 2. Download Raspbery Pi 3 device configuration files
 ```bash
 $ mkdir -pv device/brobwind
-$ git clone git://github.com/brobwind/pie-device-brobwind-rpi3 device/brobwind/rpi3
+$ git clone git://github.com/radix-pro/pie-device-brobwind-rpi3 device/brobwind/rpi3
 ```
 
 3. Add local manifest file
@@ -101,6 +101,18 @@ After executing the command, it will also install following images to sdcard:
 2. Using fastboot command
 
 Please refer to https://github.com/brobwind/pie-device-brobwind-rpi3-u-boot/blob/pie-device-brobwind-rpi3/README.md
+
+Tips:
+
+1.1^
+```bash
+sudo modprobe loop
+dd if=/dev/zero of=flash.img bs=$((1024*1024)) count=7560
+sudo losetup -P /dev/loop5 flash.img
+sudo OUT=${OUT} device/brobwind/rpi3/boot/create_partition_table.sh /dev/loop5
+sudo dd if=/dev/loop5 bs=$((1024*1024)) count=7560 | gzip -cf > android9-rpi3.img.gz
+sudo losetup -d /dev/loop5
+'''
 
 #### For detail info, please refer:
 1. https://www.brobwind.com/archives/1575
