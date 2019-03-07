@@ -56,7 +56,7 @@ index cd8fdbf..6918bc3 100644
          // layers the ability to match their parent sizes and be able to skip
          // such arbitrary size settings.
 -        mSurfaceSize = Math.max(mBaseDisplayHeight, mBaseDisplayWidth) * 2;
-+        mSurfaceSize = (int)(Math.max(mBaseDisplayHeight, mBaseDisplayWidth) * 1.4);
++        mSurfaceSize = (int)(Math.max(mBaseDisplayHeight, mBaseDisplayWidth) * 1.6);
  
          final SurfaceControl.Builder b = mService.makeSurfaceBuilder(mSession)
                  .setSize(mSurfaceSize, mSurfaceSize)
